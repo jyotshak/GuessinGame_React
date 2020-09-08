@@ -31,15 +31,24 @@ describe('render',()=>{
         });
 
     });
-    describe('word hasnt been guessed',()=>{
-        test('renders without error', ()=>{
+    describe('word has been guessed',()=>{
+        let wrapper;
+        beforeEach(()=>{
+            const initialState = {success:true};
+            wrapper = setup(initialState);
+        });
 
+        test('renders without error', ()=>{
+            const component=findByTestAttr(wrapper,"component-input");
+            expect(component.length).toBe(1);
         });
         test('does NOT renders input box', ()=>{
-
+            const component=findByTestAttr(wrapper,"input-box");
+            expect(component.length).toBe(0); 
         });
         test('does NOT renders submit button', ()=>{
-
+            const component=findByTestAttr(wrapper,"submit-button");
+            expect(component.length).toBe(0);
         });
     });
 });
