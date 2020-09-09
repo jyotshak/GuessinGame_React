@@ -1,6 +1,7 @@
 import {storeFactory} from './test/testUtils';
 import {guessWord} from './actions'
 
+// testing merge conflict -testGit
 
 describe('guessWord action dispatcher',()=>{
     const secretWord = 'party';
