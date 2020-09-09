@@ -6,7 +6,7 @@ import {middlewares} from '../configureStore'
 
 export const storeFactory= (initialState) =>{
   const createStoreWithMiddleware = applyMiddleware(...middlewares)(createStore);
-  return createStore(rootReducer, initialState);
+  return createStoreWithMiddleware(rootReducer, initialState);
 }
 /**
  * Return node(s) with the given data-test attribute.
